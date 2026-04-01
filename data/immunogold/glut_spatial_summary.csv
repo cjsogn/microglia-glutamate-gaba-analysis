@@ -1,0 +1,15 @@
+,,mg_density,mg_density,mg_density,dist_to_glut_terminal,dist_to_glut_terminal,dist_to_glut_terminal
+,,count,mean,std,min,max,mean
+animal,glut_proximity,,,,,,
+GA1,apposed,3,32.07,17.15,0.0,0.0,0.0
+GA1,close,10,31.25,11.93,13.33,423.75,222.78
+GA1,distant,3,28.22,3.35,851.82,1136.47,1012.68
+GA2,apposed,2,68.48,16.96,0.0,0.0,0.0
+GA2,close,8,46.26,14.75,0.95,470.27,114.81
+GA2,distant,1,25.57,,925.39,925.39,925.39
+GA3,apposed,3,41.89,19.37,0.0,0.0,0.0
+GA3,close,10,31.84,20.59,7.73,425.07,207.45
+GA3,distant,6,22.32,11.42,522.14,822.41,627.26
+GA4,apposed,3,16.0,6.57,0.0,0.0,0.0
+GA4,close,5,16.97,5.75,0.0,350.03,78.5
+GA4,distant,2,18.99,3.14,1127.89,1136.25,1132.07

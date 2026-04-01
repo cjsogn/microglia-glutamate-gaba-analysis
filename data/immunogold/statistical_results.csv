@@ -1,0 +1,9 @@
+analysis,apposed_n,apposed_mean,apposed_std,not_apposed_n,not_apposed_mean,not_apposed_std,mann_whitney_U,p_value,n,spearman_r,closer_gaba_n,closer_gaba_mean,closer_glut_n,closer_glut_mean,test,W,p
+gaba_apposed_vs_not,6.0,17.075747332860917,10.315003362771828,130.0,23.941922693351145,16.46123085269541,272.0,0.21303157758944102,,,,,,,,,
+gaba_distance_correlation,,,,,,,,0.2663707427465077,44.0,0.1712472640832815,,,,,,,
+gaba_closer_terminal_type,,,,,,,711.0,0.23937838004138468,,,37.0,24.891118623284317,33.0,22.004585219378423,,,
+glut_apposed_vs_not,11.0,36.9854974263505,22.722159219701062,112.0,32.66092794223987,16.487024286730264,646.0,0.7937405838235099,,,,,,,,,
+glut_distance_correlation,,,,,,,,0.1856227109179864,56.0,-0.179486698184866,,,,,,,
+glut_closer_terminal_type,,,,,,,601.0,0.39451829031570895,,,34.0,36.42413272784083,40.0,33.0890567060145,,,
+gaba_animal_level,,,,,,,,,,,,,,,wilcoxon,0.0,0.5
+glut_animal_level,,,,,,,,,,,,,,,wilcoxon,2.0,0.375
