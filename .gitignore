@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+.ipynb_checkpoints/
+
+# local inputs and outputs
+raw/
+figures/

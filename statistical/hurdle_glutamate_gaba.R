@@ -23,13 +23,13 @@ library(patchwork)
 
 set.seed(42)
 options(mc.cores = 14)
-output_dir <- "/Users/cjsogn/Bayes-microglia"
+output_dir <- Sys.getenv("BAYES_RESULTS", "results/bayes")
 dir.create(output_dir, showWarnings = FALSE)
 
 # =============================================================================
 # Load and Prepare Data
 # =============================================================================
-data <- read.csv("/Users/cjsogn/microglia_glutamate_gaba_analysis/results/profile_level_data.csv")
+data <- read.csv(file.path(Sys.getenv("MICROGLIA_RESULTS", "results"), "profile_level_data.csv"))
 
 # Filter microglia data for both markers
 microglia_data <- data %>%

@@ -9,6 +9,7 @@ pathway genes across transcriptomics (scRNA-seq, 3d and 30d) and proteomics
 Manuscript figures: Fig 5G-J
 """
 
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -51,9 +52,9 @@ GLUT_COLORS = {
 }
 
 # Data paths
-RNA_PATH = '/Users/cjsogn/geo_downloads/GSE307796/differential_expression_results.csv'
-PROT_PATH = '/Users/cjsogn/rangaraju_microglia_proteomics/PerseusExport_proteomicRulerTransformation.txt'
-OUTPUT_DIR = '/Users/cjsogn/rangaraju_microglia_proteomics/'
+RNA_PATH = os.path.join(os.environ.get('GEO_LPS_DIR', 'raw/GSE307796'), 'differential_expression_results.csv')
+PROT_PATH = os.path.join(os.environ.get('PROTEOMICS_DIR', 'raw/rangaraju_proteomics'), 'PerseusExport_proteomicRulerTransformation.txt')
+OUTPUT_DIR = os.environ.get('PROTEOMICS_DIR', 'raw/rangaraju_proteomics')
 
 # Proteomics sample columns
 CONTROL_COLS = ['B6.1', 'B6.2', 'B6.3']

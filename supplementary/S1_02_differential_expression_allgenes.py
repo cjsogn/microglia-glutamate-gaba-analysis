@@ -15,6 +15,7 @@ Outputs:
     scores, adjusted p-values, log fold changes, and gene symbols.
 """
 
+import os
 import numpy as np
 import pandas as pd
 import scanpy as sc
@@ -33,8 +34,8 @@ print("=" * 70)
 print("STEP 1: Re-running differential expression on ALL 32,285 genes")
 print("=" * 70)
 
-BASE_DIR = '/Users/cjsogn/zeng_microglia_analysis'
-OUTPUT_DIR = '/Users/cjsogn/Documents/Artikkel 1/supp'
+BASE_DIR = os.environ.get('ZENG_ANALYSIS_DIR', 'results/zeng_microglia')
+OUTPUT_DIR = os.environ.get('SUPP_RESULTS', 'results/supplementary')
 
 # Load raw data (all genes)
 print("Loading raw h5ad (all genes)...")

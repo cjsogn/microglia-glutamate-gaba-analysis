@@ -22,8 +22,8 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Configuration
-BASE_DIR = "/Users/cjsogn/2.11.15 iba1 glut gaba 86956"
-OUTPUT_DIR = "/Users/cjsogn/microglia_spatial_analysis"
+BASE_DIR = os.environ.get('SPATIAL_IMAGE_DIR', 'raw/spatial_images')
+OUTPUT_DIR = os.environ.get('SPATIAL_RESULTS', 'results/spatial')
 
 # Animal mapping
 ANIMALS = {

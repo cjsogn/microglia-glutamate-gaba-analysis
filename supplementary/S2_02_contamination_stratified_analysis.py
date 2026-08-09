@@ -30,8 +30,8 @@ warnings.filterwarnings('ignore', category=DeprecationWarning)
 # Configuration
 # ============================================================================
 
-BASE_DIR = "/Users/cjsogn/Documents/Artikkel 1/supp/Decontamination_Validation"
-DATA_DIR = "/Users/cjsogn/Documents/data/Whole aging mouse brain RNA Zeng"
+BASE_DIR = os.environ.get('DECONTAMINATION_DIR', 'results/decontamination')
+DATA_DIR = os.environ.get('ZENG_AGING_DIR', 'raw/zeng_aging_mouse')
 H5AD_PATH = os.path.join(DATA_DIR, "Zeng-Aging-Mouse-10Xv3-log2.h5ad")
 METADATA_PATH = os.path.join(DATA_DIR, "cell_cluster_mapping_annotations.csv")
 RESULTS_DIR = os.path.join(BASE_DIR, "results")

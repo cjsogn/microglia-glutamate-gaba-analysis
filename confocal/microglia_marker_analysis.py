@@ -323,7 +323,7 @@ if __name__ == '__main__':
     import sys
 
     # Default input directory
-    INPUT_DIR = "/Users/cjsogn/Corrected_Stacks"
+    INPUT_DIR = os.environ.get('CONFOCAL_STACKS', 'raw/corrected_stacks')
 
     # Parse command line arguments
     if len(sys.argv) > 1:

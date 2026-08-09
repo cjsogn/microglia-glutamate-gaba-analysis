@@ -34,9 +34,9 @@ suppressPackageStartupMessages({
 })
 
 # Set paths
-data_path <- "/Users/cjsogn/microglia_glutamate_gaba_analysis/data"
-results_path <- "/Users/cjsogn/microglia_glutamate_gaba_analysis/results"
-figures_path <- "/Users/cjsogn/microglia_glutamate_gaba_analysis/figures"
+data_path <- Sys.getenv("MICROGLIA_DATA", "data")
+results_path <- Sys.getenv("MICROGLIA_RESULTS", "results")
+figures_path <- Sys.getenv("MICROGLIA_FIGURES", "figures")
 
 # Read data
 profile_data <- read.csv(file.path(data_path, "profile_level_data.csv"))

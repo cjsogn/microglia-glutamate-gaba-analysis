@@ -51,7 +51,7 @@ warnings.filterwarnings('ignore')
 
 N_WORKERS = 14
 CHUNK_SIZE = 100_000
-BASE_DIR = "/Users/cjsogn/Glutamate_GABA_Expression_Analysis"
+BASE_DIR = os.environ.get('EXPRESSION_RESULTS', 'results/expression')
 RESULTS_DIR = os.path.join(BASE_DIR, "results")
 
 # =============================================================================
@@ -424,7 +424,7 @@ def analyze_zeng_mouse() -> pd.DataFrame:
     print("ANALYZING: Zeng Whole Mouse Brain (Neurons Combined)")
     print("=" * 80)
 
-    data_dir = "/Users/cjsogn/Documents/data/Whole mouse brain RNA Zeng"
+    data_dir = os.environ.get('ZENG_MOUSE_DIR', 'raw/zeng_mouse_brain')
     metadata_path = os.path.join(data_dir, "cell_metadata_with_cluster_annotation.csv")
 
     region_files = [
@@ -492,16 +492,16 @@ def analyze_zeng_aging() -> pd.DataFrame:
     print("ANALYZING: Zeng Aging Mouse Brain (Neurons Combined)")
     print("=" * 80)
 
-    adata_path = "/Users/cjsogn/Documents/data/Whole aging mouse brain RNA Zeng/Zeng-Aging-Mouse-10Xv3-log2.h5ad"
+    adata_path = os.path.join(os.environ.get('ZENG_AGING_DIR', 'raw/zeng_aging_mouse'), 'Zeng-Aging-Mouse-10Xv3-log2.h5ad')
 
     # Load and merge metadata
     print("Loading metadata...")
     cluster_mapping = pd.read_csv(
-        "/Users/cjsogn/Documents/data/Whole aging mouse brain RNA Zeng/cell_cluster_mapping_annotations.csv",
+        os.path.join(os.environ.get('ZENG_AGING_DIR', 'raw/zeng_aging_mouse'), 'cell_cluster_mapping_annotations.csv'),
         usecols=['cell_label', 'class_name', 'subclass_name']
     )
     cell_meta = pd.read_csv(
-        "/Users/cjsogn/Documents/data/Whole aging mouse brain RNA Zeng/cell_metadata.csv",
+        os.path.join(os.environ.get('ZENG_AGING_DIR', 'raw/zeng_aging_mouse'), 'cell_metadata.csv'),
         usecols=['cell_label', 'donor_age_category']
     )
 
@@ -586,7 +586,7 @@ def analyze_siletti() -> pd.DataFrame:
     print("ANALYZING: Siletti Human Brain (Neurons Combined)")
     print("=" * 80)
 
-    data_dir = "/Users/cjsogn/Documents/data/Whole human RNA Siletti"
+    data_dir = os.environ.get('SILETTI_DIR', 'raw/siletti_human')
 
     # Load and prepare metadata
     print("Loading metadata...")
@@ -719,7 +719,7 @@ def analyze_asap() -> pd.DataFrame:
     print("ANALYZING: ASAP Human Brain (Neurons Combined)")
     print("=" * 80)
 
-    data_dir = "/Users/cjsogn/Documents/data/ASAP"
+    data_dir = os.environ.get('ASAP_DIR', 'raw/asap')
 
     # Load and merge metadata
     print("Loading metadata...")

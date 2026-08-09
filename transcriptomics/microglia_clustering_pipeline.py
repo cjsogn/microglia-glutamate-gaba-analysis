@@ -28,6 +28,7 @@ References:
 Manuscript figures: Fig 2B-D
 """
 
+import os
 import gc
 import warnings
 from pathlib import Path
@@ -50,8 +51,8 @@ class Config:
     """Pipeline configuration."""
 
     # Paths - MODIFY FOR YOUR SYSTEM
-    DATA_DIR = Path("/Users/cjsogn/Documents/data/Whole mouse brain RNA Zeng")
-    OUTPUT_DIR = Path("/Users/cjsogn/zeng_microglia_analysis")
+    DATA_DIR = Path(os.environ.get('ZENG_MOUSE_DIR', 'raw/zeng_mouse_brain'))
+    OUTPUT_DIR = Path(os.environ.get('ZENG_ANALYSIS_DIR', 'results/zeng_microglia'))
 
     # Brain region files
     H5AD_FILES = [

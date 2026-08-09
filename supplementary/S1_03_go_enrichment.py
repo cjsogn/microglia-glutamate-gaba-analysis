@@ -8,6 +8,7 @@ enrichment on top 50 DE genes per cluster using Enrichr via gseapy.
 Manuscript figures: Supplementary Fig S1
 """
 
+import os
 import pandas as pd
 import numpy as np
 import gseapy as gp
@@ -46,8 +47,8 @@ CLUSTER_COLORS = {
     'HM-Quiescent': '#8c564b',
 }
 
-OUTPUT_DIR = '/Users/cjsogn/Documents/Artikkel 1/supp'
-DATA_DIR = '/Users/cjsogn/zeng_microglia_analysis'
+OUTPUT_DIR = os.environ.get('SUPP_RESULTS', 'results/supplementary')
+DATA_DIR = os.environ.get('ZENG_ANALYSIS_DIR', 'results/zeng_microglia')
 
 # Load DE results
 df = pd.read_csv(f'{DATA_DIR}/marker_genes_allgenes.csv')

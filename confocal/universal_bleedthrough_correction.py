@@ -13,6 +13,7 @@ Input:  CZI files organized by marker folder
 Output: Corrected TIFF stacks, JSON correction summaries, comparison PNGs
 """
 
+import os
 import numpy as np
 from aicspylibczi import CziFile
 import tifffile
@@ -276,7 +277,7 @@ def process_marker(marker_name, input_dir, base_output_dir, n_cores=14, visualiz
 
 def main():
     parser = argparse.ArgumentParser(description='Universal bleed-through correction')
-    parser.add_argument('--input-dir', type=str, default='/Users/cjsogn/Marker analysis',
+    parser.add_argument('--input-dir', type=str, default=os.environ.get('MARKER_STACKS', 'raw/marker_analysis'),
                        help='Base directory containing marker folders')
     parser.add_argument('--output-dir', type=str, default=None,
                        help='Base output directory')
